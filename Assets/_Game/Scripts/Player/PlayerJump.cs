@@ -6,13 +6,14 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float jumpForce = 700f;
     [SerializeField] private PlayerSwipeControl playerSwipeControl;
 
-
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Z))
         {
             Jump();
         }
+
+        Debug.Log(rb.velocity.y);
     }
 
 
