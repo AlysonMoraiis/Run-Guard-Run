@@ -3,7 +3,13 @@ guid: e89b56e12fb375b45b3c6649207865e9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gameData: {fileID: 11400000, guid: 6e071d9ad870fca4e96fe14b2f08ba4a, type: 2}
+  - _inGameTextScore: {instanceID: 0}
+  - _textLastScore: {instanceID: 0}
+  - _textAfterGameHighscore: {instanceID: 0}
+  - _textMenuGameHighscore: {instanceID: 0}
+  - playerCollisions: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

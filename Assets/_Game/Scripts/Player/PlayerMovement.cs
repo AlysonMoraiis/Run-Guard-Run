@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] int moveSpeed;
-
-
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private int moveSpeed;
 
     void Update()
     {

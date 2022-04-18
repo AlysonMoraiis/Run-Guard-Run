@@ -12,9 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     private int tHighscore;
     private float lastScore;
-
     private bool canCountScore = true;
-
 
     private void Start()
     {
@@ -23,18 +21,15 @@ public class ScoreManager : MonoBehaviour
         _textMenuGameHighscore.text = tHighscore.ToString();
     }
 
-
     private void OnEnable()
     {
         playerCollisions.OnDeath += UpdateHighscore;
     }
 
-
     private void OnDisable()
     {
         playerCollisions.OnDeath -= UpdateHighscore;
     }
-
 
     private void Update()
     {
@@ -45,13 +40,11 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-
     void InGameTextUpdate()
     {
         int tScore = (int)gameData.Score;
         _inGameTextScore.text = tScore.ToString();
     }
-
 
     private void UpdateHighscore()
     {
@@ -65,7 +58,6 @@ public class ScoreManager : MonoBehaviour
         _textAfterGameHighscore.text = tHighscore.ToString();
         _textMenuGameHighscore.text = tHighscore.ToString();
     }
-
 
     private void LastScore()
     {

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcf492a3391c5a4781201dd92558e3e, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  Score: 8.909028
-  Highscore: 139.37271
-  Coin: 0
+  Score: 0.15184
+  Highscore: 1009.0642
+  Coin: 113
