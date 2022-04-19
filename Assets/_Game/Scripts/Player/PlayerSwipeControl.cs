@@ -4,8 +4,6 @@ using System;
 
 public class PlayerSwipeControl : MonoBehaviour
 {
-    public Text outputText;
-
     private Vector2 startTouchPosition;
     private Vector2 currentPosition;
     private Vector2 endTouchPosition;
@@ -42,29 +40,29 @@ public class PlayerSwipeControl : MonoBehaviour
             {
                 if (Distance.x < -swipeRange)
                 {
+                    //left
                     OnSwipeLeft?.Invoke();
-                    outputText.text = "Left";
                     stopTouch = true;
                 }
 
                 else if (Distance.x > swipeRange)
                 {
+                    //right
                     OnSwipeRight?.Invoke();
-                    outputText.text = "Right";
                     stopTouch = true;
                 }
 
                 else if (Distance.y > swipeRange)
                 {
+                    //up
                     OnSwipeUp?.Invoke();
-                    outputText.text = "Up";
                     stopTouch = true;
                 }
 
                 else if (Distance.y < -swipeRange)
                 {
+                    //down
                     OnSwipeDown?.Invoke();
-                    outputText.text = "Down";
                     stopTouch = true;
                 }
             }
@@ -80,7 +78,7 @@ public class PlayerSwipeControl : MonoBehaviour
 
             if(Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
             {
-                outputText.text = "Tap";
+                //tap
             }
         }
     }
