@@ -4,7 +4,7 @@ using System.Collections;
 public class OverCondition : MonoBehaviour
 {
     [SerializeField] private PlayerCollisions playerCollisions;
-    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private ScaleWindow scaleWindow;
 
     private void OnEnable()
     {
@@ -27,6 +27,6 @@ public class OverCondition : MonoBehaviour
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(0.6f);
         Debug.Log("passou");
-        gameOverMenu.SetActive(true);
+        scaleWindow.OpenWindow();
     }
 }

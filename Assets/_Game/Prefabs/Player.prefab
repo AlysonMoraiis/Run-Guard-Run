@@ -79,8 +79,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7166236263522030466, guid: 3e37f774f8a5ee846a5c5a0a3515a045, type: 3}
+  m_SortingOrder: 9
+  m_Sprite: {fileID: -6367560908665664636, guid: 329c6061df4815e49992c87cea6e37fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,14 +100,14 @@ BoxCollider2D:
   m_GameObject: {fileID: 7852078568336025699}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 032bfd7bacec75a419a46ab5fa544b02, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.022657871, y: 0.037387818}
+  m_Offset: {x: 0.022657871, y: -0.012010515}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.44}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -115,7 +115,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6374483, y: 0.87084216}
+  m_Size: {x: 0.6374483, y: 0.9696388}
   m_EdgeRadius: 0
 --- !u!50 &7852078568336025702
 Rigidbody2D:
@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fca522dc8127bb45a75dda8b8309e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 11400000, guid: 6e071d9ad870fca4e96fe14b2f08ba4a, type: 2}
   playerIsAlive: 1
+  DeathClip: {fileID: 8300000, guid: 1fa8be6a5ecff5f4389114a5726a6918, type: 3}
 --- !u!114 &7852078568336025701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   rb: {fileID: 7852078568336025702}
   jumpForce: 1100
   playerSwipeControl: {fileID: 7852078568336025706}
+  JumpClip: {fileID: 8300000, guid: 78df54f9737d9e3418affc8854bcc361, type: 3}
 --- !u!114 &7852078568336025706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9ca2fc605fb8049a8011373e956535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputText: {fileID: 0}
   swipeRange: 50
   tapRange: 10
 --- !u!114 &7852078568336025707
@@ -197,6 +197,7 @@ MonoBehaviour:
   rb: {fileID: 7852078568336025702}
   accelerateForce: 700
   playerSwipeControl: {fileID: 7852078568336025706}
+  FallClip: {fileID: 8300000, guid: 5e5dd8a2512f0fb4fb4f4170a5be836c, type: 3}
 --- !u!114 &7852078568336025704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7852078568336025702}
   animator: {fileID: 1804408818}
-  playerCollisions: {fileID: 0}
+  playerCollisions: {fileID: 7852078568336025700}
 --- !u!95 &1804408818
 Animator:
   serializedVersion: 3
