@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7852078568336025697}
   - component: {fileID: 7852078568336025696}
+  - component: {fileID: 1804408818}
   - component: {fileID: 7852078568336025703}
   - component: {fileID: 7852078568336025702}
   - component: {fileID: 7852078568336025700}
@@ -18,7 +19,7 @@ GameObject:
   - component: {fileID: 7852078568336025707}
   - component: {fileID: 7852078568336025704}
   - component: {fileID: 6208010635103711831}
-  - component: {fileID: 1804408818}
+  - component: {fileID: 6343481504876001356}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -91,6 +92,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1804408818
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852078568336025699}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f0d71cfba66e3b41afa782ce3ce3438, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &7852078568336025703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -227,22 +247,29 @@ MonoBehaviour:
   rb: {fileID: 7852078568336025702}
   animator: {fileID: 1804408818}
   playerCollisions: {fileID: 7852078568336025700}
---- !u!95 &1804408818
-Animator:
-  serializedVersion: 3
+--- !u!114 &6343481504876001356
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7852078568336025699}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e3b9dfc3a141a1946910da4f1eb9d876, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 091e140cce983e649a2c2d195d6eda9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1804408818}
+  spriteRenderer: {fileID: 7852078568336025696}
+  playerController:
+  - {fileID: 9100000, guid: e3b9dfc3a141a1946910da4f1eb9d876, type: 2}
+  - {fileID: 9100000, guid: ae7d706edd3367f46aec02b7a7540e29, type: 2}
+  - {fileID: 9100000, guid: a64a566c555027a49a5ae513623e4173, type: 2}
+  - {fileID: 9100000, guid: a03a43516b3d3cf44ab725c9a7acb6a9, type: 2}
+  - {fileID: 9100000, guid: 5f0d71cfba66e3b41afa782ce3ce3438, type: 2}
+  playerRenderer:
+  - {fileID: -6367560908665664636, guid: 329c6061df4815e49992c87cea6e37fc, type: 3}
+  - {fileID: -6367560908665664636, guid: 33d1ddf0f6c1f4c4997145d231dc2935, type: 3}
+  - {fileID: -6367560908665664636, guid: 9659bf9703d19764aab2b0d15c8f0acc, type: 3}
+  - {fileID: -6367560908665664636, guid: 2ea1dca0acbee304181fddce7dcc5d9a, type: 3}
+  - {fileID: -6367560908665664636, guid: 760c91262faf2a3438df5a2d46ab2676, type: 3}
