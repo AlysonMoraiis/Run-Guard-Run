@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour, ISaveable
 {
     [SerializeField] private GameData gameData;
     [SerializeField] private Text _inGameTextScore;
@@ -17,8 +18,9 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         gameData.Score = 0;
-        tHighscore = (int)gameData.Highscore;
-        _textMenuGameHighscore.text = tHighscore.ToString();
+        //tHighscore = (int)gameData.Highscore;
+        //_textMenuGameHighscore.text = tHighscore.ToString();
+        UpdateHighscoreText();
     }
 
     private void OnEnable()
@@ -54,6 +56,11 @@ public class ScoreManager : MonoBehaviour
         {
             gameData.Highscore = lastScore;
         }
+        UpdateHighscoreText();
+    }
+
+    private void UpdateHighscoreText()
+    {
         tHighscore = (int)gameData.Highscore;
         _textAfterGameHighscore.text = tHighscore.ToString();
         _textMenuGameHighscore.text = tHighscore.ToString();
@@ -64,5 +71,27 @@ public class ScoreManager : MonoBehaviour
         lastScore = gameData.Score;
         int tLastScore = (int)gameData.Score;
         _textLastScore.text = tLastScore.ToString();
+    }
+
+    public object SaveState()
+    {
+        Debug.Log("save highscore " + gameData.Highscore);
+        return new SaveData()
+        {
+            highscore = this.gameData.Highscore
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        gameData.Highscore = saveData.highscore;
+        Debug.Log("load highscore" + gameData.Highscore);
+    }
+
+    [Serializable]
+    private struct SaveData
+    {
+        public float highscore;
     }
 }

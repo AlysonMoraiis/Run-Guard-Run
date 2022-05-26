@@ -14,7 +14,7 @@ public class PlayerCollisions : MonoBehaviour
             OnDeath?.Invoke();
             playerIsAlive = false;
             Debug.Log("Morreu");
-            SoundManager.Instance.PlaySound(DeathClip);
+            SoundManager.Instance.PlaySound(DeathClip); 
         }
     }
 

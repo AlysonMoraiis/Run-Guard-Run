@@ -19,6 +19,7 @@ public class OverCondition : MonoBehaviour
     private void GameOverMenu()
     {
         Debug.Log("Abriu Menu");
+        SaveLoadSystem.Instance.Save();
         StartCoroutine(WaitATime());
     }
 
