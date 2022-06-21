@@ -6,7 +6,7 @@ public class PlayerCollisions : MonoBehaviour
     public event Action OnDeath;
     [HideInInspector] public bool playerIsAlive = true;
     [SerializeField] private AudioClip DeathClip;
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Enemy"))

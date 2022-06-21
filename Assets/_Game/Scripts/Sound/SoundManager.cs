@@ -32,4 +32,29 @@ public class SoundManager : MonoBehaviour
         _musicSource.mute = !_musicSource.mute;
         _effectsSource.mute = !_effectsSource.mute;
     }
+
+    public void IncrementPitch()
+    {
+        StartCoroutine(WaitBeforePitch());
+        StartCoroutine(WaitAfterPitch());
+    }
+
+    public void ResetPitch()
+    {
+        _effectsSource.pitch = 1f;
+        Debug.Log("Resetou");
+    }
+
+    private IEnumerator WaitAfterPitch()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("ResetPitch");
+        SoundManager.Instance.ResetPitch();
+    }
+
+    private IEnumerator WaitBeforePitch()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _effectsSource.pitch += 0.2f;
+    }
 }

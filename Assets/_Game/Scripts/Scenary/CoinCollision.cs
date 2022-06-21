@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +14,15 @@ public class CoinCollision : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             gameData.Coin += 1;
-            Debug.Log("Coletou Moeda");
             animator.SetTrigger("Destroy");
-            SoundManager.Instance.PlaySound(CollectSoundEffect);
+            PlaySound();
         }
+    }
+
+    private void PlaySound()
+    {
+        SoundManager.Instance.PlaySound(CollectSoundEffect);
+        SoundManager.Instance.IncrementPitch();
     }
 
     private void DestroyGameObjectOnAnimation()
