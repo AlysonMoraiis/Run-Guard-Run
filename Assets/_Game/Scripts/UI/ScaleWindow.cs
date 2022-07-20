@@ -21,7 +21,6 @@ public class ScaleWindow : MonoBehaviour
 
     private void CloseWindow()
     {
-        Debug.Log("Fechou");
         _window.SetActive(false);
     }
 }

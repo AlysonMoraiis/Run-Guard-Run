@@ -11,8 +11,7 @@ public class FpsControl : MonoBehaviour
 
     void Awake()
     {
-        QualitySettings.vSyncCount = 1;
-        Application.targetFrameRate = 60;
+        // Application.targetFrameRate = 30;
     }
 
     void Update()

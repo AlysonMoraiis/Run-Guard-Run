@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource _musicSource;
+    [SerializeField] public AudioSource _musicSource;
     [SerializeField] private AudioSource _effectsSource;
-
     public static SoundManager Instance;
 
     private void Awake()
@@ -47,7 +47,7 @@ public class SoundManager : MonoBehaviour
 
     private IEnumerator WaitAfterPitch()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         Debug.Log("ResetPitch");
         SoundManager.Instance.ResetPitch();
     }
