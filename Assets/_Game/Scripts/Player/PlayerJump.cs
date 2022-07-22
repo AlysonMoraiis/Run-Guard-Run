@@ -5,6 +5,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float jumpForce = 700f;
     [SerializeField] private PlayerSwipeControl playerSwipeControl;
+    [SerializeField] private ClickControl _clickControl;
     [SerializeField] private AudioClip JumpClip;
 
     private void Update()
@@ -18,11 +19,13 @@ public class PlayerJump : MonoBehaviour
     private void OnEnable()
     {
         playerSwipeControl.OnSwipeUp += Jump;
+        _clickControl.OnJump += Jump;
     }
 
     private void OnDisable()
     {
         playerSwipeControl.OnSwipeUp -= Jump;
+        _clickControl.OnJump += Jump;
     }
 
     void Jump()

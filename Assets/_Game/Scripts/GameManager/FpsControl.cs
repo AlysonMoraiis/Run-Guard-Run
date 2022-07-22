@@ -9,11 +9,6 @@ public class FpsControl : MonoBehaviour
     public string display = "{0} FPS";
     public Text m_Text;
 
-    void Awake()
-    {
-        // Application.targetFrameRate = 30;
-    }
-
     void Update()
     {
 #if DEVELOPMENT_BUILD

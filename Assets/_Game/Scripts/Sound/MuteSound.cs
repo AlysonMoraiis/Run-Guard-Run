@@ -6,22 +6,28 @@ public class MuteSound : MonoBehaviour
     [SerializeField] private Sprite _enabledSound;
     [SerializeField] private Sprite _disabledSound;
     [SerializeField] private Button _musicButton;
+    [SerializeField] private GameData _gameData;
+
+    private void Start()
+    {
+        SpriteCheck();
+    }
 
     public void MuteAndUnmuteSoundCaller()
     {
+        _gameData.SoundStats = !_gameData.SoundStats;
         SpriteCheck();
         SoundManager.Instance.MuteAndUnmuteSound();
+
     }
 
     private void SpriteCheck()
     {
-        if (SoundManager.Instance._musicSource.mute == true)
+        if (_gameData.SoundStats == true)
         {
             _musicButton.GetComponent<Image>().sprite = _enabledSound;
+            return;
         }
-        else
-        {
-            _musicButton.GetComponent<Image>().sprite = _disabledSound;
-        }
+        _musicButton.GetComponent<Image>().sprite = _disabledSound;
     }
 }

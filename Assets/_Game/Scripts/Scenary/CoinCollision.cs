@@ -9,11 +9,13 @@ public class CoinCollision : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private AudioClip CollectSoundEffect;
 
+    public event Action OnCoinTrigger;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            gameData.Coin += 1;
+            Debug.Log("Moeda Coletada");
             animator.SetTrigger("Destroy");
             PlaySound();
         }

@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour, ISaveable
 {
     [SerializeField] private GameData gameData;
     [SerializeField] private Text _inGameTextScore;
-    [SerializeField] private Text _textLastScore;
+    [SerializeField] private Text _inGameLastScoreText;
     [SerializeField] private Text _textAfterGameHighscore;
     [SerializeField] private Text _textMenuGameHighscore;
     [SerializeField] private PlayerCollisions playerCollisions;
@@ -70,7 +70,8 @@ public class ScoreManager : MonoBehaviour, ISaveable
     {
         lastScore = gameData.Score;
         int tLastScore = (int)gameData.Score;
-        _textLastScore.text = tLastScore.ToString();
+        _inGameLastScoreText.text = tLastScore.ToString();
+
     }
 
     public object SaveState()

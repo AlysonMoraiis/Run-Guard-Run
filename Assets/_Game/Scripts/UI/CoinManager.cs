@@ -6,13 +6,50 @@ using System;
 public class CoinManager : MonoBehaviour, ISaveable
 {
     [SerializeField] private GameData gameData;
-    [SerializeField] private Text coinText;
+    [SerializeField] private Text _menuCoinText;
+    [SerializeField] private Text _inGameCoinText;
+    [SerializeField] private Text _gameOverCoinText;
+    [SerializeField] private PlayerCollisions _playerCollisions;
+
+    private int _inGameCoins;
+
+    private void OnEnable()
+    {
+        _playerCollisions.OnCoinTrigger += UpdateInGameText;
+        _playerCollisions.OnDeath += OnDeathUpdate;
+    }
+
+    private void OnDisable()
+    {
+        _playerCollisions.OnCoinTrigger -= UpdateInGameText;
+        _playerCollisions.OnDeath -= OnDeathUpdate;
+    }
 
     void Start()
     {
         int tCoinText = (int)gameData.Coin;
-        coinText.text = tCoinText.ToString();
+        _menuCoinText.text = tCoinText.ToString();
     }
+
+    public void UpdateInGameText()
+    {
+        _inGameCoins += 1;
+        _inGameCoinText.text = _inGameCoins.ToString();
+    }
+
+    public void RewardedButtonIncrement()
+    {
+        gameData.Coin += _inGameCoins;
+        _inGameCoins *= 2;
+        _gameOverCoinText.text = _inGameCoins.ToString();
+    }
+
+    public void OnDeathUpdate()
+    {
+        gameData.Coin += _inGameCoins;
+        _gameOverCoinText.text = _inGameCoins.ToString();
+    }
+
 
     public object SaveState()
     {

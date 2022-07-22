@@ -4,6 +4,8 @@ using System;
 
 public class PlayerSwipeControl : MonoBehaviour
 {
+    [SerializeField] private GameData _gameData;
+
     private Vector2 startTouchPosition;
     private Vector2 currentPosition;
     private Vector2 endTouchPosition;
@@ -20,7 +22,10 @@ public class PlayerSwipeControl : MonoBehaviour
 
     private void Update()
     {
-        Swipe();
+        if (_gameData.ControlType)
+        {
+            Swipe();
+        }
     }
 
 
@@ -68,7 +73,7 @@ public class PlayerSwipeControl : MonoBehaviour
             }
         }
 
-        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             stopTouch = false;
 
@@ -76,7 +81,7 @@ public class PlayerSwipeControl : MonoBehaviour
 
             Vector2 Distance = endTouchPosition - startTouchPosition;
 
-            if(Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
+            if (Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
             {
                 //tap
             }
