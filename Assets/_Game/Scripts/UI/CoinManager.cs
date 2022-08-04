@@ -11,6 +11,7 @@ public class CoinManager : MonoBehaviour, ISaveable
     [SerializeField] private Text _gameOverCoinText;
     [SerializeField] private PlayerCollisions _playerCollisions;
 
+    private int tCoinText;
     private int _inGameCoins;
 
     private void OnEnable()
@@ -27,49 +28,57 @@ public class CoinManager : MonoBehaviour, ISaveable
 
     void Start()
     {
-        int tCoinText = (int)gameData.Coin;
-        _menuCoinText.text = tCoinText.ToString();
+        tCoinText = (int)gameData.Apple;
+        TextUpdate();
     }
 
     public void UpdateInGameText()
     {
         _inGameCoins += 1;
-        _inGameCoinText.text = _inGameCoins.ToString();
+        TextUpdate();
     }
 
     public void RewardedButtonIncrement()
     {
-        gameData.Coin += _inGameCoins;
+        gameData.Apple += _inGameCoins;
         _inGameCoins *= 2;
-        _gameOverCoinText.text = _inGameCoins.ToString();
+        TextUpdate();
     }
 
     public void OnDeathUpdate()
     {
-        gameData.Coin += _inGameCoins;
+        gameData.Apple += _inGameCoins;
+        TextUpdate();
+    }
+
+    public void TextUpdate()
+    {
+
         _gameOverCoinText.text = _inGameCoins.ToString();
+        _inGameCoinText.text = _inGameCoins.ToString();
+        _menuCoinText.text = tCoinText.ToString();
     }
 
 
     public object SaveState()
     {
-        Debug.Log("save coin " + gameData.Coin);
+        Debug.Log("save coin " + gameData.Apple);
         return new SaveData()
         {
-            coin = this.gameData.Coin
+            coin = this.gameData.Apple
         };
     }
 
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
-        gameData.Coin = saveData.coin;
-        Debug.Log("load coin" + gameData.Coin);
+        gameData.Apple = saveData.coin;
+        Debug.Log("load coin" + gameData.Apple);
     }
 
     [Serializable]
     private struct SaveData
     {
-        public float coin;
+        public int coin;
     }
 }

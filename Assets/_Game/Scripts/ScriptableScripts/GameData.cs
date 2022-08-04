@@ -5,7 +5,7 @@ public class GameData : ScriptableObject
 {
     public float Score;
     public float Highscore;
-    public float Coin;
+    public int Apple;
 
     public bool ControlType;
 

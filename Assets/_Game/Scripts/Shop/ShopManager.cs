@@ -20,10 +20,10 @@ public class ShopManager : MonoBehaviour
     {
         if(skinId == 0)
         {
-            if (gameData.Coin > BoyScoutSkinPrice)
+            if (gameData.Apple > BoyScoutSkinPrice)
             {
                 OwnBoyScoutSkin = true;
-                gameData.Coin -= BoyScoutSkinPrice;
+                gameData.Apple -= BoyScoutSkinPrice;
                 SaveLoadSystem.Instance.Save();
             }
         }
