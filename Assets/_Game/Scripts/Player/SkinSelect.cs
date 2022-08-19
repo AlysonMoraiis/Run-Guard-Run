@@ -10,7 +10,7 @@ public class SkinSelect : MonoBehaviour, ISaveable
     [SerializeField] private RuntimeAnimatorController[] playerController;
     [SerializeField] private Sprite[] playerRenderer;
     public int _index;
-
+    public event Action OnEquip;
 
     private void Start()
     {
@@ -24,6 +24,7 @@ public class SkinSelect : MonoBehaviour, ISaveable
         spriteRenderer.sprite = playerRenderer[index];
         animator.runtimeAnimatorController = playerController[index];
         SaveLoadSystem.Instance.Save();
+        OnEquip?.Invoke();
         Debug.Log(_index);
     }
 

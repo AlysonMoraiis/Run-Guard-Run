@@ -15,10 +15,6 @@ public class SaveLoadSystem : MonoBehaviour
         Load();
     }
 
-    private void Start()
-    {
-    }
-
     [ContextMenu("Save")]
     public void Save()
     {

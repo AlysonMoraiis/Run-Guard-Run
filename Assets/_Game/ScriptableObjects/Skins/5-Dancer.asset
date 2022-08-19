@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffcf492a3391c5a4781201dd92558e3e, type: 3}
-  m_Name: GameData
+  m_Script: {fileID: 11500000, guid: f5d6c0c4a3e625749bc7dda6b202b01a, type: 3}
+  m_Name: 5-Dancer
   m_EditorClassIdentifier: 
-  Score: 0.19999999
-  Highscore: 845.39307
-  Apple: 99499
-  ControlType: 1
-  SoundStats: 1
+  SkinName: Dancer
+  SkinImage: {fileID: 7166236263522030466, guid: 50e22ab22e990434098d884cc63f36f9, type: 3}
+  SkinPrice: 10000
+  SkinIndex: 5
+  HasPurchased: 1

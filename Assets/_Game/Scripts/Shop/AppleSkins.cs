@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class AppleSkins : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class AppleSkins : MonoBehaviour
     [SerializeField] private SkinSelect _skinSelect;
     [SerializeField] private Text _skinName;
     [SerializeField] private Text _skinPrice;
+    [SerializeField] private ScaleWindow _scaleWindow;
+
+    public event Action OnPurchase;
 
     public void UpdateSkinsInfo(Skins skins)
     {
@@ -25,6 +29,8 @@ public class AppleSkins : MonoBehaviour
             _skins.HasPurchased = true;
             _skinSelect.SetPlayerSelected(_skins.SkinIndex);
             _coinManager.TextUpdate();
+            _scaleWindow.CloseWindowCall();
+            OnPurchase?.Invoke();
         }
         else
         {

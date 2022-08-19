@@ -53,10 +53,11 @@ public class CoinManager : MonoBehaviour, ISaveable
 
     public void TextUpdate()
     {
-
+        tCoinText = (int)gameData.Apple;
         _gameOverCoinText.text = _inGameCoins.ToString();
         _inGameCoinText.text = _inGameCoins.ToString();
         _menuCoinText.text = tCoinText.ToString();
+        Debug.Log("Coin value update");
     }
 
 
