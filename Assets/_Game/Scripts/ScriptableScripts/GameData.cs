@@ -10,4 +10,6 @@ public class GameData : ScriptableObject
     public bool ControlType;
 
     public bool SoundStats;
+
+    public int DeathsCount;
 }

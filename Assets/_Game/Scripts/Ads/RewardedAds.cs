@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
 
-public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
+public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
@@ -20,7 +20,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 #elif UNITY_ANDROID
         _adUnitId = _androidAdUnitId;
 #endif
-        Advertisement.Load(_adUnitId, this);
+        LoadAd();
 
         //Disable the button until the ad is ready to show:
         _showAdButton.interactable = false;

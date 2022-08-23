@@ -6246,53 +6246,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950205012}
   m_CullTransparentMesh: 1
---- !u!1 &954857956
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 954857958}
-  - component: {fileID: 954857957}
-  m_Layer: 0
-  m_Name: AdsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &954857957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954857956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b871b067c0dcab24eab524c921008b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _androidGameId: 4735429
-  _iOSGameId: 4735428
-  _rewardedAdsButton: {fileID: 1142648738}
---- !u!4 &954857958
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954857956}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7519107, y: 1.3520004, z: 90}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959886386
 GameObject:
   m_ObjectHideFlags: 0
@@ -8106,6 +8059,7 @@ GameObject:
   - component: {fileID: 1142648735}
   - component: {fileID: 1142648734}
   - component: {fileID: 1142648738}
+  - component: {fileID: 1142648739}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8215,6 +8169,22 @@ MonoBehaviour:
   _iOSAdUnitId: Rewarded_iOS
   _coinManager: {fileID: 1441601818}
   _rewardedButton: {fileID: 1439360779}
+--- !u!114 &1142648739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142648733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f3b8fc5b7fa0c4b9b0c1576ed7400c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidAdUnitId: Interstitial_Android
+  _iOsAdUnitId: Interstitial_iOS
+  _gameData: {fileID: 11400000, guid: 6e071d9ad870fca4e96fe14b2f08ba4a, type: 2}
+  _playerCollisions: {fileID: 1804408822}
 --- !u!1 &1153367098
 GameObject:
   m_ObjectHideFlags: 0
@@ -15196,6 +15166,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7852078568336025700, guid: 6272a734a50afac45a8c0d2504da2466, type: 3}
+      propertyPath: _gameData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e071d9ad870fca4e96fe14b2f08ba4a, type: 2}
+    - target: {fileID: 7852078568336025700, guid: 6272a734a50afac45a8c0d2504da2466, type: 3}
+      propertyPath: _deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fa8be6a5ecff5f4389114a5726a6918, type: 3}
     - target: {fileID: 7852078568336025701, guid: 6272a734a50afac45a8c0d2504da2466, type: 3}
       propertyPath: _clickControl
       value: 

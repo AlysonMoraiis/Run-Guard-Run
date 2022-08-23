@@ -30,7 +30,7 @@ public class LevelGenerator : MonoBehaviour
         {
             SpawnLevelPart();
         }
-        if (playerCollisions.playerIsAlive)
+        if (playerCollisions._playerIsAlive)
         {
             playerPosition = playerGameObject.transform.position;
         }
