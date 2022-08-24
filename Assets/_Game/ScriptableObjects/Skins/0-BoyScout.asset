@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 0-BoyScout
   m_EditorClassIdentifier: 
   SkinName: 'Boy '
-  SkinImage: {fileID: -6367560908665664636, guid: 5d56c64cbaa2f8041a3c36ef6607a419, type: 3}
+  SkinImage: {fileID: -6367560908665664636, guid: 329c6061df4815e49992c87cea6e37fc, type: 3}
   SkinPrice: 0
   SkinIndex: 0
   HasPurchased: 0
