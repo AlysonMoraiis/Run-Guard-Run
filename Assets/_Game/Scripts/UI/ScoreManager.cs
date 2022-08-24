@@ -76,7 +76,7 @@ public class ScoreManager : MonoBehaviour, ISaveable
 
     public object SaveState()
     {
-        Debug.Log("save highscore " + gameData.Highscore);
+        Debug.Log("Save highscore: " + gameData.Highscore);
         return new SaveData()
         {
             highscore = this.gameData.Highscore
@@ -87,7 +87,7 @@ public class ScoreManager : MonoBehaviour, ISaveable
     {
         var saveData = (SaveData)state;
         gameData.Highscore = saveData.highscore;
-        Debug.Log("load highscore" + gameData.Highscore);
+        Debug.Log("Load highscore" + gameData.Highscore);
     }
 
     [Serializable]

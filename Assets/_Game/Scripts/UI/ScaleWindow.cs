@@ -12,7 +12,6 @@ public class ScaleWindow : MonoBehaviour
     {
         _window.SetActive(true);
         _transform.DOScale(_scaleTo, _scaleTime).SetUpdate(true);
-        Debug.Log("Open Window");
     }
 
     public void CloseWindowCall()

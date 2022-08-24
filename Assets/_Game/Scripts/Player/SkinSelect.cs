@@ -14,7 +14,6 @@ public class SkinSelect : MonoBehaviour, ISaveable
 
     private void Start()
     {
-        Debug.Log("a index é: " + _index);
         SetPlayerSelected(_index);
     }
 
@@ -25,12 +24,10 @@ public class SkinSelect : MonoBehaviour, ISaveable
         animator.runtimeAnimatorController = playerController[index];
         SaveLoadSystem.Instance.Save();
         OnEquip?.Invoke();
-        Debug.Log(_index);
     }
 
     public object SaveState()
     {
-        Debug.Log(_index);
         return new SaveData()
         {
             index = this._index
@@ -41,7 +38,6 @@ public class SkinSelect : MonoBehaviour, ISaveable
     {
         var saveData = (SaveData)state;
         _index = saveData.index;
-        Debug.Log(_index);
     }
 
     [Serializable]

@@ -57,13 +57,12 @@ public class CoinManager : MonoBehaviour, ISaveable
         _gameOverCoinText.text = _inGameCoins.ToString();
         _inGameCoinText.text = _inGameCoins.ToString();
         _menuCoinText.text = tCoinText.ToString();
-        Debug.Log("Coin value update");
     }
 
 
     public object SaveState()
     {
-        Debug.Log("save coin " + gameData.Apple);
+        Debug.Log("Save coins: " + gameData.Apple);
         return new SaveData()
         {
             coin = this.gameData.Apple
@@ -74,7 +73,7 @@ public class CoinManager : MonoBehaviour, ISaveable
     {
         var saveData = (SaveData)state;
         gameData.Apple = saveData.coin;
-        Debug.Log("load coin" + gameData.Apple);
+        Debug.Log("Load coins: " + gameData.Apple);
     }
 
     [Serializable]

@@ -2,13 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
  
-public class BannerAdExample : MonoBehaviour
+public class BannerAds : MonoBehaviour
 {
     // For the purpose of this example, these buttons are for functionality testing:
-    [SerializeField] Button _loadBannerButton;
-    [SerializeField] Button _showBannerButton;
-    [SerializeField] Button _hideBannerButton;
- 
     [SerializeField] BannerPosition _bannerPosition = BannerPosition.BOTTOM_CENTER;
  
     [SerializeField] string _androidAdUnitId = "Banner_Android";
@@ -32,8 +28,6 @@ public class BannerAdExample : MonoBehaviour
         Advertisement.Banner.SetPosition(_bannerPosition);
  
         // Configure the Load Banner button to call the LoadBanner() method when clicked:
-       //_loadBannerButton.onClick.AddListener(LoadBanner);
-        //_loadBannerButton.interactable = true;
         LoadBanner();
     }
  
@@ -98,12 +92,4 @@ public class BannerAdExample : MonoBehaviour
     void OnBannerClicked() { }
     void OnBannerShown() { }
     void OnBannerHidden() { }
- 
-    void OnDestroy()
-    {
-        // Clean up the listeners:
-        _loadBannerButton.onClick.RemoveAllListeners();
-        _showBannerButton.onClick.RemoveAllListeners();
-        _hideBannerButton.onClick.RemoveAllListeners();
-    }
 }
