@@ -8,9 +8,11 @@ public class GameOverScene : MonoBehaviour
     [SerializeField] private CoinManager _coinManager;
 
     [SerializeField] private GameObject _placeholderAdPopUp;
+    [SerializeField] private AudioClip _uiClickClip;
 
     public void RestartLevel()
     {
+        SoundManager.Instance.PlaySound(_uiClickClip);
         SaveLoadSystem.Instance.Save();
         SceneManager.LoadScene("Game");
         gameOverScene.SetActive(false);
@@ -19,6 +21,7 @@ public class GameOverScene : MonoBehaviour
 
     public void RewardedButton()
     {
+        SoundManager.Instance.PlaySound(_uiClickClip);
         _coinManager.RewardedButtonIncrement();
         _placeholderAdPopUp.SetActive(true);
     }

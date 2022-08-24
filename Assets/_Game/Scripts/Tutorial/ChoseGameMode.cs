@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class ChoseGameMode : MonoBehaviour
 {
     [SerializeField] private GameData _gameData;
-
+    [SerializeField] private AudioSource _effectsSource;
+    [SerializeField] private AudioClip _uiClickClip;
     public void SwipeControlMode()
     {
         _gameData.ControlType = true;
@@ -21,6 +22,7 @@ public class ChoseGameMode : MonoBehaviour
 
     private void NextScene()
     {
+        _effectsSource.PlayOneShot(_uiClickClip);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
