@@ -9,4 +9,6 @@ public class Skins : ScriptableObject
     public int SkinPrice;
     public int SkinIndex;
     public bool HasPurchased;
+    public bool ItsApple;
+    public bool ItsPineapple;
 }

@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Coin
+  - Apple
+  - Pineapple
   layers:
   - Default
   - TransparentFX

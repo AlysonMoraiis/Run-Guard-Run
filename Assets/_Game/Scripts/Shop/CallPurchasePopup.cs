@@ -7,7 +7,7 @@ using System;
 public class CallPurchasePopup : MonoBehaviour
 {
     [SerializeField] private ScaleWindow _scaleWindow;
-    [SerializeField] private AppleSkins _appleSkins;
+    [SerializeField] private PurchaseSkinsScreen _appleSkins;
     [SerializeField] private SkinSelect _skinSelect;
     [SerializeField] private Skins _skins;
     [SerializeField] private Button _skinSelectButton;

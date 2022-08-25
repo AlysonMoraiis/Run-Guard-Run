@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcf492a3391c5a4781201dd92558e3e, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  Score: 0
-  Highscore: 0
-  Apple: 0
+  Score: 0.19999999
+  Highscore: 769.18884
+  Apple: 176
+  Pineapple: 765856
   ControlType: 1
   SoundStats: 1
   DeathsCount: 0

@@ -12,7 +12,7 @@ public class SetSkinInSlot : MonoBehaviour
     [SerializeField] private Skins _skins;
     [SerializeField] private GameObject _availableSkin;
     [SerializeField] private GameObject _purchasedSkin;
-    [SerializeField] private AppleSkins _appleSkins;
+    [SerializeField] private PurchaseSkinsScreen _appleSkins;
     [SerializeField] private int _skinIndex;
     [SerializeField] private Button _skinSelectButton;
     [SerializeField] private SkinSelect _skinSelect;

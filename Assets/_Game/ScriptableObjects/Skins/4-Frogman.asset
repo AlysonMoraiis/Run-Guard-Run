@@ -17,3 +17,5 @@ MonoBehaviour:
   SkinPrice: 5000
   SkinIndex: 4
   HasPurchased: 0
+  ItsApple: 0
+  ItsPineapple: 1

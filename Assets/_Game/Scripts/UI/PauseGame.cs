@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 public class PauseGame : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenu;
+    [SerializeField] private AudioClip _uiClickClip;
+
     public void PauseAndUnapause()
     {
+        SoundManager.Instance.PlaySound(_uiClickClip);
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
@@ -23,6 +26,7 @@ public class PauseGame : MonoBehaviour
 
     public void BackToMenu()
     {
+        SoundManager.Instance.PlaySound(_uiClickClip);
         SceneManager.LoadScene("Game");
     }
 }

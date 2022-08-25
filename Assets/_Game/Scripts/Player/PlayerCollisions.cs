@@ -4,7 +4,8 @@ using System;
 public class PlayerCollisions : MonoBehaviour
 {
     public event Action OnDeath;
-    public event Action OnCoinTrigger;
+    public event Action OnAppleTrigger;
+    public event Action OnPineappleTrigger;
     [HideInInspector] public bool _playerIsAlive = true;
     [SerializeField] private AudioClip _deathClip;
 
@@ -17,9 +18,14 @@ public class PlayerCollisions : MonoBehaviour
             SoundManager.Instance.PlaySound(_deathClip);
         }
 
-        if (collision.gameObject.CompareTag("Coin"))
+        if (collision.gameObject.CompareTag("Apple"))
         {
-            OnCoinTrigger?.Invoke();
+            OnAppleTrigger?.Invoke();
+        }
+        
+        if(collision.gameObject.CompareTag("Pineapple"))
+        {
+            OnPineappleTrigger?.Invoke();
         }
     }
 

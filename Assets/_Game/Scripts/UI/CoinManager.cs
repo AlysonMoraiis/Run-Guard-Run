@@ -5,80 +5,108 @@ using UnityEngine.UI;
 using System;
 public class CoinManager : MonoBehaviour, ISaveable
 {
-    [SerializeField] private GameData gameData;
-    [SerializeField] private Text _menuCoinText;
-    [SerializeField] private Text _inGameCoinText;
-    [SerializeField] private Text _gameOverCoinText;
-    [SerializeField] private PlayerCollisions _playerCollisions;
 
-    private int tCoinText;
-    private int _inGameCoins;
+    [Header("Apple")]
+    [SerializeField] private Text _menuAppleText;
+    [SerializeField] private Text _inGameAppleText;
+    private int tAppleText;
+    private int _inGameApples;
+
+    [Header("Pineapple")]
+    [SerializeField] private Text _menuPineappleText;
+    [SerializeField] private Text _inGamePineappleText;
+    private int tPineappleText;
+    private int _inGamePineapples;
+
+    [Header("Others")]
+    [SerializeField] private GameData gameData;
+    [SerializeField] private PlayerCollisions _playerCollisions;
 
     private void OnEnable()
     {
-        _playerCollisions.OnCoinTrigger += UpdateInGameText;
+        _playerCollisions.OnAppleTrigger += AppleIncrement;
+        _playerCollisions.OnPineappleTrigger += PineappleIncrement;
         _playerCollisions.OnDeath += OnDeathUpdate;
     }
 
     private void OnDisable()
     {
-        _playerCollisions.OnCoinTrigger -= UpdateInGameText;
+        _playerCollisions.OnAppleTrigger -= AppleIncrement;
+        _playerCollisions.OnPineappleTrigger -= PineappleIncrement;
         _playerCollisions.OnDeath -= OnDeathUpdate;
     }
 
     void Start()
     {
-        tCoinText = (int)gameData.Apple;
+        tAppleText = (int)gameData.Apple;
+        tPineappleText = (int)gameData.Pineapple;
         TextUpdate();
     }
 
-    public void UpdateInGameText()
+    public void AppleIncrement()
     {
-        _inGameCoins += 1;
+        _inGameApples += 1;
+        TextUpdate();
+    }
+
+    public void PineappleIncrement()
+    {
+        _inGamePineapples += 1;
         TextUpdate();
     }
 
     public void RewardedButtonIncrement()
     {
-        gameData.Apple += _inGameCoins;
-        _inGameCoins *= 2;
+        gameData.Apple += _inGameApples;
+        gameData.Pineapple += _inGamePineapples;
+        _inGameApples *= 2;
+        _inGamePineapples *= 2;
         TextUpdate();
     }
 
     public void OnDeathUpdate()
     {
-        gameData.Apple += _inGameCoins;
+        gameData.Apple += _inGameApples;
+        gameData.Pineapple += _inGamePineapples;
         TextUpdate();
     }
 
     public void TextUpdate()
     {
-        tCoinText = (int)gameData.Apple;
-        _gameOverCoinText.text = _inGameCoins.ToString();
-        _inGameCoinText.text = _inGameCoins.ToString();
-        _menuCoinText.text = tCoinText.ToString();
+        tAppleText = (int)gameData.Apple;
+        _inGameAppleText.text = _inGameApples.ToString();
+        _menuAppleText.text = tAppleText.ToString();
+
+        tPineappleText = (int)gameData.Pineapple;
+        _inGamePineappleText.text = _inGamePineapples.ToString();
+        _menuPineappleText.text = tPineappleText.ToString();
     }
 
 
     public object SaveState()
     {
-        Debug.Log("Save coins: " + gameData.Apple);
+        Debug.Log("Save apples: " + gameData.Apple);
+        Debug.Log("Save pineapples: " + gameData.Pineapple);
         return new SaveData()
         {
-            coin = this.gameData.Apple
+            apple = this.gameData.Apple,
+            pineapple = this.gameData.Pineapple
         };
     }
 
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
-        gameData.Apple = saveData.coin;
-        Debug.Log("Load coins: " + gameData.Apple);
+        gameData.Apple = saveData.apple;
+        gameData.Pineapple = saveData.pineapple;
+        Debug.Log("Load apples: " + gameData.Apple);
+        Debug.Log("Load pineapples: " + gameData.Pineapple);
     }
 
     [Serializable]
     private struct SaveData
     {
-        public int coin;
+        public int apple;
+        public int pineapple;
     }
 }
