@@ -690,6 +690,8 @@ MonoBehaviour:
   _skinIndex: 4
   _skinSelectButton: {fileID: 1031917036}
   _skinSelect: {fileID: 1804408829}
+  _appleColor: {r: 0.8196079, g: 0.2509804, b: 0.2509804, a: 1}
+  _pineappleColor: {r: 0.90196085, g: 0.5529412, b: 0.25490198, a: 1}
 --- !u!1 &78763572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,6 +3495,8 @@ MonoBehaviour:
   _skinIndex: 1
   _skinSelectButton: {fileID: 303925331}
   _skinSelect: {fileID: 1804408829}
+  _appleColor: {r: 0.8196079, g: 0.2509804, b: 0.2509804, a: 1}
+  _pineappleColor: {r: 0.90196085, g: 0.5529412, b: 0.25490198, a: 1}
 --- !u!1 &450580935
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,7 +3513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &450580936
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3519,7 +3523,7 @@ RectTransform:
   m_GameObject: {fileID: 450580935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 209069396}
@@ -8656,6 +8660,8 @@ MonoBehaviour:
   _skinIndex: 5
   _skinSelectButton: {fileID: 1253090689}
   _skinSelect: {fileID: 1804408829}
+  _appleColor: {r: 0.8196079, g: 0.2509804, b: 0.2509804, a: 1}
+  _pineappleColor: {r: 0.90196085, g: 0.5529412, b: 0.25490198, a: 1}
 --- !u!1 &1193291992
 GameObject:
   m_ObjectHideFlags: 0
@@ -10237,6 +10243,8 @@ MonoBehaviour:
   _skinIndex: 2
   _skinSelectButton: {fileID: 614324076}
   _skinSelect: {fileID: 1804408829}
+  _appleColor: {r: 0.8196079, g: 0.2509804, b: 0.2509804, a: 1}
+  _pineappleColor: {r: 0.90196085, g: 0.5529412, b: 0.25490198, a: 1}
 --- !u!1 &1384849429
 GameObject:
   m_ObjectHideFlags: 0
@@ -10433,6 +10441,8 @@ MonoBehaviour:
   _skinIndex: 3
   _skinSelectButton: {fileID: 1326175758}
   _skinSelect: {fileID: 1804408829}
+  _appleColor: {r: 0.8196079, g: 0.2509804, b: 0.2509804, a: 1}
+  _pineappleColor: {r: 0.90196085, g: 0.5529412, b: 0.25490198, a: 1}
 --- !u!1 &1396786153
 GameObject:
   m_ObjectHideFlags: 0
@@ -14745,6 +14755,8 @@ MonoBehaviour:
   _skinIndex: 0
   _skinSelectButton: {fileID: 437417740}
   _skinSelect: {fileID: 1804408829}
+  _appleColor: {r: 0.8196079, g: 0.2509804, b: 0.2509804, a: 1}
+  _pineappleColor: {r: 0.90196085, g: 0.5529412, b: 0.25490198, a: 1}
 --- !u!1 &2073612724
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class SetSkinInSlot : MonoBehaviour
     [SerializeField] private int _skinIndex;
     [SerializeField] private Button _skinSelectButton;
     [SerializeField] private SkinSelect _skinSelect;
+    [SerializeField] private Color _appleColor;
+    [SerializeField] private Color _pineappleColor;
 
 
     void OnEnable()
@@ -37,6 +39,14 @@ public class SetSkinInSlot : MonoBehaviour
 
     public void Refresh()
     {
+        if (_skins.ItsApple)
+        {
+            _skinPrice.color = _appleColor;
+        }
+        else if (_skins.ItsPineapple)
+        {
+            _skinPrice.color = _pineappleColor;
+        }
         _skinSelectButton.interactable = true;
         SetSkin();
         if (_hasPurchased)

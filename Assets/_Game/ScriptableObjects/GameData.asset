@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   Score: 0.19999999
-  Highscore: 769.18884
-  Apple: 176
-  Pineapple: 765856
+  Highscore: 0
+  Apple: 0
+  Pineapple: 0
   ControlType: 1
   SoundStats: 1
   DeathsCount: 0
