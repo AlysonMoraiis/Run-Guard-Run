@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffcf492a3391c5a4781201dd92558e3e, type: 3}
-  m_Name: GameData
+  m_Script: {fileID: 11500000, guid: 3f0d5e3944fa4c34eb61e94e0f5864bf, type: 3}
+  m_Name: RatedData
   m_EditorClassIdentifier: 
-  Score: 0.19999999
-  Highscore: 25.192198
-  Apple: 0
-  Pineapple: 0
-  DeathsCount: 2
-  ControlType: 1
-  SoundStats: 1
+  HasRated: 0
+  RestartCount: 6
