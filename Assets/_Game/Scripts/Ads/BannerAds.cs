@@ -48,7 +48,6 @@ public class BannerAds : MonoBehaviour
     // Implement code to execute when the loadCallback event triggers:
     void OnBannerLoaded()
     {
-        Debug.Log("Banner loaded");
         ShowBannerAd();
         // Configure the Show Banner button to call the ShowBannerAd() method when clicked:
         // _showBannerButton.onClick.AddListener(ShowBannerAd);

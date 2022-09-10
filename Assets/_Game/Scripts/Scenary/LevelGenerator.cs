@@ -3,19 +3,22 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField] private Transform levelPart_Start;
-    [SerializeField] private List<Transform> levelPartList;
-    [SerializeField] private GameObject playerGameObject;
-    [SerializeField] private PlayerCollisions playerCollisions;
+    [SerializeField] private Transform _levelPartStart;
+    [SerializeField] private List<Transform> _levelPartList_1;
+    [SerializeField] private List<Transform> _levelPartList_2;
+    [SerializeField] private GameObject _playerGameObject;
+    [SerializeField] private PlayerCollisions _playerCollisions;
+    [SerializeField] private GameData _gameData;
 
-    private Vector3 playerPosition;
-    private Vector3 lastEndPosition;
-    private float playerDistanceToSpawn = 20F;
+    private Vector3 _playerPosition;
+    private Vector3 _lastEndPosition;
+    private float _playerDistanceToSpawn = 20F;
+    private Transform _chosenLevelPart;
 
 
     private void Awake()
     {
-        lastEndPosition = levelPart_Start.Find("EndPosition").position;
+        _lastEndPosition = _levelPartStart.Find("EndPosition").position;
         int startingSpawnLevelParts = 5;
         for (int i = 0; i < startingSpawnLevelParts; i++)
         {
@@ -26,22 +29,32 @@ public class LevelGenerator : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(playerPosition, lastEndPosition) < playerDistanceToSpawn)
+        if (Vector3.Distance(_playerPosition, _lastEndPosition) < _playerDistanceToSpawn)
         {
             SpawnLevelPart();
         }
-        if (playerCollisions._playerIsAlive)
+        if (_playerCollisions._playerIsAlive)
         {
-            playerPosition = playerGameObject.transform.position;
+            _playerPosition = _playerGameObject.transform.position;
         }
     }
 
 
     private void SpawnLevelPart()
     {
-        Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
-        Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
-        lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
+        switch (_gameData.Score)
+        {
+            case <= 50:
+                _chosenLevelPart = _levelPartList_1[Random.Range(0, _levelPartList_1.Count)];
+                break;
+
+            case >= 51:
+                _chosenLevelPart = _levelPartList_2[Random.Range(0, _levelPartList_2.Count)];
+                break;
+        }
+
+        Transform lastLevelPartTransform = SpawnLevelPart(_chosenLevelPart, _lastEndPosition);
+        _lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
     }
 
 

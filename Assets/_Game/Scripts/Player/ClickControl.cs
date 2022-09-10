@@ -11,27 +11,19 @@ public class ClickControl : MonoBehaviour
 
     [SerializeField] private GameData _gameData;
 
-    [SerializeField] private Button _button;
-
-    private void Start()
+    private void Update()
     {
-        _button.onClick.AddListener(HandleJumpButton);
-    }
-
-    public void HandleJumpButton()
-    {
-        OnJump?.Invoke();
-        if (_gameData.ControlType == false)
+        if (Input.touchCount > 0 && _gameData.ControlType == false)
         {
-            OnJump?.Invoke();
-        }
-    }
-
-    public void HandleAccelerateFallButton()
-    {
-        if (_gameData.ControlType == false)
-        {
-            OnAccelerateFall?.Invoke();
+            Touch touch = Input.GetTouch(0);
+            if (touch.position.x < Screen.width / 2)
+            {
+                OnAccelerateFall?.Invoke();
+            }
+            else if (touch.position.x > Screen.width / 2)
+            {
+                OnJump?.Invoke();
+            }
         }
     }
 }

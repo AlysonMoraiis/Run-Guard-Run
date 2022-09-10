@@ -42,13 +42,11 @@ public class SoundManager : MonoBehaviour
     public void ResetPitch()
     {
         _effectsSource.pitch = 1f;
-        Debug.Log("Resetou");
     }
 
     private IEnumerator WaitAfterPitch()
     {
         yield return new WaitForSeconds(0.4f);
-        Debug.Log("ResetPitch");
         SoundManager.Instance.ResetPitch();
     }
 

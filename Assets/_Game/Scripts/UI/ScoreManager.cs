@@ -4,7 +4,7 @@ using System;
 
 public class ScoreManager : MonoBehaviour, ISaveable
 {
-    [SerializeField] private GameData gameData;
+    [SerializeField] private GameData _gameData;
     [SerializeField] private Text _inGameTextScore;
     [SerializeField] private Text _inGameLastScoreText;
     [SerializeField] private Text _textAfterGameHighscore;
@@ -17,7 +17,6 @@ public class ScoreManager : MonoBehaviour, ISaveable
 
     private void Start()
     {
-        gameData.Score = 0;
         //tHighscore = (int)gameData.Highscore;
         //_textMenuGameHighscore.text = tHighscore.ToString();
         UpdateHighscoreText();
@@ -37,14 +36,14 @@ public class ScoreManager : MonoBehaviour, ISaveable
     {
         if (canCountScore)
         {
-            gameData.Score += 10 * Time.deltaTime;
+            _gameData.Score += 6 * Time.deltaTime;
             InGameTextUpdate();
         }
     }
 
     void InGameTextUpdate()
     {
-        int tScore = (int)gameData.Score;
+        int tScore = (int)_gameData.Score;
         _inGameTextScore.text = tScore.ToString();
     }
 
@@ -52,42 +51,43 @@ public class ScoreManager : MonoBehaviour, ISaveable
     {
         canCountScore = false;
         LastScore();
-        if (lastScore > gameData.Highscore)
+        if (lastScore > _gameData.Highscore)
         {
-            gameData.Highscore = lastScore;
+            _gameData.Highscore = lastScore;
         }
         UpdateHighscoreText();
+        _gameData.Score = 0;
     }
 
     private void UpdateHighscoreText()
     {
-        tHighscore = (int)gameData.Highscore;
+        tHighscore = (int)_gameData.Highscore;
         _textAfterGameHighscore.text = tHighscore.ToString();
         _textMenuGameHighscore.text = tHighscore.ToString();
     }
 
     private void LastScore()
     {
-        lastScore = gameData.Score;
-        int tLastScore = (int)gameData.Score;
+        lastScore = _gameData.Score;
+        int tLastScore = (int)_gameData.Score;
         _inGameLastScoreText.text = tLastScore.ToString();
 
     }
 
     public object SaveState()
     {
-        Debug.Log("Save highscore: " + gameData.Highscore);
+        Debug.Log("Save highscore: " + _gameData.Highscore);
         return new SaveData()
         {
-            highscore = this.gameData.Highscore
+            highscore = this._gameData.Highscore
         };
     }
 
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
-        gameData.Highscore = saveData.highscore;
-        Debug.Log("Load highscore" + gameData.Highscore);
+        _gameData.Highscore = saveData.highscore;
+        Debug.Log("Load highscore" + _gameData.Highscore);
     }
 
     [Serializable]
