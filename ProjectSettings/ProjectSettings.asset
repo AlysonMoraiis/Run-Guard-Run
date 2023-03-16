@@ -745,7 +745,11 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT;STARTER_ASSETS_PACKAGES_CHECKED
+    Standalone: CROSS_PLATFORM_INPUT
+    Windows Store Apps: MOBILE_INPUT
+    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -837,7 +841,7 @@ PlayerSettings:
   cloudProjectId: da3f7cab-ae7e-4f1e-9930-b89a12dc4369
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Runner Base
+  projectName: Forest Runner
   organizationId: alysonmdm
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

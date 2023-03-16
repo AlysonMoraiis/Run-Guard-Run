@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Apple
   - Pineapple
+  - CinemachineTarget
+  - camara1
+  - AutomaticPlatform
   layers:
   - Default
   - TransparentFX
