@@ -32,7 +32,6 @@ public class PlayerJump : MonoBehaviour
     {
         if (rb.velocity.y == 0 && GameManager.Instance.GameIsRunning())
         {
-            //rb.AddForce(Vector2.up * jumpForce);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.fixedDeltaTime);
             SoundManager.Instance.PlaySound(JumpClip);
         }

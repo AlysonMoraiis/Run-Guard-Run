@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class OverCondition : MonoBehaviour
 {
     [SerializeField] private PlayerCollisions playerCollisions;
     [SerializeField] private ScaleWindow scaleWindow;
-    [SerializeField] private Button _homeButton;
 
     private void OnEnable()
     {
@@ -20,7 +18,6 @@ public class OverCondition : MonoBehaviour
 
     private void GameOverMenu()
     {
-        Debug.Log("Abriu Menu");
         //SaveLoadSystem.Instance.Save();
         StartCoroutine(WaitATime());
     }
@@ -29,7 +26,6 @@ public class OverCondition : MonoBehaviour
     {
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(0.6f);
-        Debug.Log("passou");
         scaleWindow.OpenWindow();
     }
 }

@@ -15,7 +15,6 @@ public class LevelGenerator : MonoBehaviour
     private float _playerDistanceToSpawn = 20F;
     private Transform _chosenLevelPart;
 
-
     private void Awake()
     {
         _lastEndPosition = _levelPartStart.Find("EndPosition").position;
@@ -25,7 +24,6 @@ public class LevelGenerator : MonoBehaviour
             SpawnLevelPart();
         }
     }
-
 
     private void Update()
     {
@@ -38,8 +36,7 @@ public class LevelGenerator : MonoBehaviour
             _playerPosition = _playerGameObject.transform.position;
         }
     }
-
-
+    
     private void SpawnLevelPart()
     {
         switch (_gameData.Score)
@@ -57,21 +54,9 @@ public class LevelGenerator : MonoBehaviour
         _lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
     }
 
-
     private Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)
     {
         Transform levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
         return levelPartTransform;
     }
-
-
-    //public void DestroyLevelParts()
-    //{
-    //    List<GameObject> levelParts= GameObject.FindGameObjectsWithTag("levelPart");
-
-    //    for (var i = 0; i < levelParts.Length; i++)
-    //    {
-    //        Destroy(levelParts[i]);
-    //    }
-    //}
 }
