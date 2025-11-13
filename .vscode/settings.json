@@ -1,6 +1,5 @@
 {
-    "files.exclude":
-    {
+    "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
@@ -63,9 +62,7 @@
         "**\\ScriptableObjects": true,
         "ScriptableObjects": true,
         "**\\Unity.Burst.Editor.csproj": true,
-        "*.csproj": true,
         "Unity.Burst.Editor.csproj": true,
-        "**\\*.csproj": true,
         "**\\UserSettings": true,
         "UserSettings": true,
         "**\\.gitattributes": true,
@@ -122,9 +119,8 @@
         "**\\.vsconfig": true,
         ".vsconfig": true,
         "**\\BasicRunner.sln": true,
-        "*.sln": true,
-        "BasicRunner.sln": true,
-        "**\\*.sln": true
+        "BasicRunner.sln": true
     },
-    "explorerExclude.backup": {}
+    "explorerExclude.backup": {},
+    "dotnet.defaultSolution": "Run-Guard-Run.sln"
 }
